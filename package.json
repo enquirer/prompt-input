@@ -1,0 +1,53 @@
+{
+  "name": "enquirer-prompt-input",
+  "description": "Input prompt plugin for Enquirer. This is included in Enquirer by default and does not need to be registered separately.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/enquirer-prompt-input",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/enquirer-prompt-input",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/enquirer-prompt-input/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "log-utils": "^0.2.1"
+  },
+  "keywords": [
+    "answer",
+    "answers",
+    "ask",
+    "checkbox",
+    "choice",
+    "cli",
+    "command",
+    "enquirerprompt",
+    "input",
+    "inquire",
+    "inquirer",
+    "interact",
+    "list",
+    "menu",
+    "password",
+    "prompt",
+    "prompts",
+    "question",
+    "readline",
+    "stdin",
+    "stdout",
+    "terminal",
+    "tty",
+    "ui"
+  ]
+}
