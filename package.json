@@ -1,6 +1,6 @@
 {
   "name": "enquirer-prompt-input",
-  "description": "Input prompt plugin for Enquirer. This is included in Enquirer by default and does not need to be registered separately.",
+  "description": "Input prompt plugin for Enquirer. This is the only prompt type included in Enquirer by default and does not need to be registered separately.",
   "version": "0.1.0",
   "homepage": "https://github.com/jonschlinkert/enquirer-prompt-input",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -22,17 +22,23 @@
     "test": "mocha"
   },
   "dependencies": {
+    "enquirer-prompt": "^0.1.0",
     "log-utils": "^0.2.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^0.1.10"
   },
   "keywords": [
     "answer",
     "answers",
     "ask",
+    "bar",
+    "bottom",
     "checkbox",
     "choice",
     "cli",
     "command",
-    "enquirerprompt",
+    "enquirer",
     "input",
     "inquire",
     "inquirer",
@@ -49,5 +55,30 @@
     "terminal",
     "tty",
     "ui"
-  ]
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "enquirer",
+        "enquirer-question",
+        "prompt-choices",
+        "readline-utils"
+      ]
+    },
+    "reflinks": [
+      "verb",
+      "verb-generate-readme"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
 }
