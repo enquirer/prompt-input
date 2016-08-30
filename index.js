@@ -2,18 +2,19 @@
 
 var util = require('util');
 var log = require('log-utils');
-var Prompt = require('enquirer-prompt');
+var Prompt = require('prompt-base');
 
 /**
- * "Input" prompt
+ * Create a new "Input" prompt with the given `question`, and optional `answers`
+ * and `rl`.
  */
 
 function Input(/*question, answers, rl*/) {
-  return Prompt.apply(this, arguments);
+  Prompt.apply(this, arguments);
 }
 
 /**
- * Inherit Prompt
+ * Inherit base `Prompt`
  */
 
 util.inherits(Input, Prompt);
@@ -24,15 +25,11 @@ util.inherits(Input, Prompt);
  * @return {Object} Returns the `Input` instance
  */
 
-Input.prototype.ask = function(cb) {
-  this.callback = cb.bind(this);
-  var self = this;
-
-  // this.ui.on('keypress', this.render.bind(this, null));
+Input.prototype.ask = function(callback) {
+  this.callback = callback.bind(this);
+  this.ui.on('keypress', this.render.bind(this, null));
   this.ui.once('line', this.onSubmit.bind(this));
   this.once('error', this.onError.bind(this));
-
-  // Init
   this.render();
   return this;
 };
@@ -53,23 +50,24 @@ Input.prototype.render = function(error) {
 };
 
 /**
- * When user press `enter` key
+ * When the answer is submitted (user presses `enter` key), re-render
+ * and pass answer to callback.
+ * @param {Object} `input`
  */
 
-Input.prototype.onSubmit = function(e) {
-  this.answer = this.filterInput(e);
+Input.prototype.onSubmit = function(input) {
+  this.answer = this.question.getAnswer(input);
   this.status = 'answered';
-  this.render();
-  this.ui.write();
-  this.callback(this.answer);
+  this.submitAnswer();
 };
 
-Input.prototype.onError = function(answer) {
-  this.render(answer.isValid);
-};
+/**
+ * Handle error events
+ * @param {Object} `event`
+ */
 
-Input.prototype.filterInput = function(input) {
-  return input || this.question.default || '';
+Input.prototype.onError = function(event) {
+  this.render(event.isValid);
 };
 
 /**
