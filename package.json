@@ -1,7 +1,7 @@
 {
   "name": "enquirer-prompt-input",
   "description": "Input prompt plugin for [Enquirer]. This is the only prompt type included in Enquirer by default and does not need to be registered separately.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "https://github.com/enquirer/enquirer-prompt-input",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "enquirer/enquirer-prompt-input",
