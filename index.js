@@ -24,8 +24,7 @@ util.inherits(Input, Prompt);
  */
 
 Input.prototype.render = function(state) {
-  state = state || {};
-  var append = state.isValid === false ? log.red('>> ') + state.error : '';
+  var append = typeof state === 'string' ? log.red('>> ') + state : '';
   var message = this.message;
   if (this.status === 'answered') {
     message += log.cyan(this.answer);
