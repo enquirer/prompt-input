@@ -1,5 +1,4 @@
-
-var Prompt = require('./');
+var Prompt = require('..');
 var prompt = new Prompt({
   name: 'first',
   message: 'What is your name?',
