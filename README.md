@@ -1,70 +1,41 @@
-# enquirer-prompt-input [![NPM version](https://img.shields.io/npm/v/enquirer-prompt-input.svg?style=flat)](https://www.npmjs.com/package/enquirer-prompt-input) [![NPM monthly downloads](https://img.shields.io/npm/dm/enquirer-prompt-input.svg?style=flat)](https://npmjs.org/package/enquirer-prompt-input) [![NPM total downloads](https://img.shields.io/npm/dt/enquirer-prompt-input.svg?style=flat)](https://npmjs.org/package/enquirer-prompt-input) [![Linux Build Status](https://img.shields.io/travis/enquirer/enquirer-prompt-input.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/enquirer-prompt-input)
+# prompt-text [![NPM version](https://img.shields.io/npm/v/prompt-text.svg?style=flat)](https://www.npmjs.com/package/prompt-text) [![NPM monthly downloads](https://img.shields.io/npm/dm/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text) [![NPM total downloads](https://img.shields.io/npm/dt/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-text.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-text)
 
-> Input prompt plugin for [Enquirer](https://github.com/enquirer/enquirer). This is the only prompt type included in Enquirer by default and does not need to be registered separately.
+> Basic text input prompt. This can be used standalone, but it's also included in [enquirer](https://github.com/enquirer/enquirer) by default.
 
-{{#block "demo"}}
-![input prompt example](https://raw.githubusercontent.com/enquirer/enquirer-prompt-input/master/example.gif)
-{{/block}}
+![prompt-text example](https://raw.githubusercontent.com/enquirer/prompt-text/master/example.gif)
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install --save enquirer-prompt-input
+$ npm install --save prompt-text
 ```
 
 ## Usage
 
 ```js
-var Input = require('enquirer-prompt-input');
-var input = new Input({
+var Text = require('prompt-text');
+var text = new Text({
   name: 'first',
   message: 'What is your name?'
 });
 
-input.ask(function(answers) {
+// async
+text.ask(function(answers) {
   console.log(answers);
 });
+
+// promise
+text.run()
+  .then(function(answers) {
+    console.log(answers);
+  });
 ```
 
 ## Enquirer usage
 
-This is the only prompt type included in [enquirer](https://github.com/enquirer/enquirer) by default, so you don't need to register this with enquirer. The following is only an example of how custom prompts are registered.
-
-```js
-var Enquirer = require('enquirer');
-var enquirer = new Enquirer();
-
-// register the prompt type with enquirer
-enquirer.register('input', require('enquirer-prompt-input'));
-```
-
-```js
-var Enquirer = require('enquirer');
-var enquirer = new Enquirer();
-enquirer.register('input', require('enquirer-prompt-input'));
-
-var questions = [
-  {
-    type: 'input',
-    name: 'first',
-    message: 'First name?',
-    default: 'Brian'
-  },
-  {
-    type: 'input',
-    name: 'last',
-    message: 'Last name?',
-    default: 'Woodward'
-  }
-];
-
-enquirer.ask(questions)
-  .then(function(answers) {
-    console.log(answers)
-  });
-```
+There is no need to register this with [enquirer](https://github.com/enquirer/enquirer), as this is the only prompt type included in enquirer by default.
 
 ## Attribution
 
@@ -74,9 +45,12 @@ Based on the `input` prompt in inquirer.
 
 ### Related projects
 
-* [enquirer-prompt](https://www.npmjs.com/package/enquirer-prompt): Base prompt module used for creating custom prompt types for Enquirer. | [homepage](https://github.com/jonschlinkert/enquirer-prompt "Base prompt module used for creating custom prompt types for Enquirer.")
-* [enquirer-question](https://www.npmjs.com/package/enquirer-question): Question object, used by Enquirer and prompt plugins. | [homepage](https://github.com/enquirer/enquirer-question "Question object, used by Enquirer and prompt plugins.")
 * [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all… [more](https://github.com/enquirer/enquirer) | [homepage](https://github.com/enquirer/enquirer "Intuitive, plugin-based prompt system for node.js. Much faster and lighter alternative to Inquirer, with all the same prompt types and more, but without the bloat.")
+* [prompt-base](https://www.npmjs.com/package/prompt-base): Base prompt module used for creating custom prompts. | [homepage](https://github.com/enquirer/prompt-base "Base prompt module used for creating custom prompts.")
+* [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer). | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
+* [prompt-confirm](https://www.npmjs.com/package/prompt-confirm): Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer](https://github.com/enquirer/enquirer). | [homepage](https://github.com/enquirer/prompt-confirm "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].")
+* [prompt-list](https://www.npmjs.com/package/prompt-list): List-style prompt. Can be used as a standalone prompt, or with a prompt system like… [more](https://github.com/enquirer/prompt-list) | [homepage](https://github.com/enquirer/prompt-list "List-style prompt. Can be used as a standalone prompt, or with a prompt system like [enquirer].")
+* [prompt-sort](https://www.npmjs.com/package/prompt-sort): Prompt that allows the user to re-order items in a list of choices. | [homepage](https://github.com/enquirer/prompt-sort "Prompt that allows the user to re-order items in a list of choices.")
 
 ### Contributing
 
@@ -104,4 +78,4 @@ Released under the [MIT License](LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 05, 2017._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 26, 2017._
