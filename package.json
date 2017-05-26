@@ -1,7 +1,7 @@
 {
   "name": "prompt-text",
   "description": "Basic text input prompt. This can be used standalone, but it's also included in [enquirer] by default.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/enquirer/prompt-text",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
