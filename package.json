@@ -1,16 +1,16 @@
 {
-  "name": "enquirer-prompt-input",
-  "description": "Input prompt plugin for [Enquirer]. This is the only prompt type included in Enquirer by default and does not need to be registered separately.",
-  "version": "0.4.0",
-  "homepage": "https://github.com/enquirer/enquirer-prompt-input",
+  "name": "prompt-text",
+  "description": "Basic text input prompt. This can be used standalone, but it's also included in [enquirer] by default.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/enquirer/prompt-text",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
     "Brian Woodward (https://twitter.com/doowb)",
     "Jon Schlinkert (http://twitter.com/jonschlinkert)"
   ],
-  "repository": "enquirer/enquirer-prompt-input",
+  "repository": "enquirer/prompt-text",
   "bugs": {
-    "url": "https://github.com/enquirer/enquirer-prompt-input/issues"
+    "url": "https://github.com/enquirer/prompt-text/issues"
   },
   "license": "MIT",
   "files": [
@@ -24,12 +24,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "log-utils": "^0.2.1",
-    "prompt-base": "^0.7.0"
+    "ansi-cyan": "^0.1.1",
+    "ansi-red": "^0.1.1",
+    "prompt-base": "^2.1.1"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.12",
-    "mocha": "^3.3.0"
+    "mocha": "^3.4.2"
   },
   "keywords": [
     "answer",
@@ -56,6 +57,7 @@
     "stdin",
     "stdout",
     "terminal",
+    "text",
     "tty",
     "ui"
   ],
@@ -74,8 +76,11 @@
     "related": {
       "list": [
         "enquirer",
-        "enquirer-prompt",
-        "enquirer-question"
+        "prompt-base",
+        "prompt-checkbox",
+        "prompt-confirm",
+        "prompt-list",
+        "prompt-sort"
       ]
     },
     "lint": {

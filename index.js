@@ -1,8 +1,8 @@
 'use strict';
 
-var util = require('util');
-var log = require('log-utils');
 var Prompt = require('prompt-base');
+var cyan = require('ansi-cyan');
+var red = require('ansi-red');
 
 /**
  * Create a new "Input" prompt with the given `question`, and optional `answers`
@@ -17,20 +17,21 @@ function Input(/*question, answers, rl*/) {
  * Inherit base `Prompt`
  */
 
-util.inherits(Input, Prompt);
+Prompt.extend(Input);
 
 /**
  * Render the prompt to terminal
  */
 
-Input.prototype.render = function(err) {
-  var error = typeof err === 'string'
-    ? log.red('>> ') + err
-    : '';
+Input.prototype.render = function(state) {
+  var error = typeof state === 'string' ? red('>> ') + state : '';
+  var message = this.message + ' ';
 
-  var message = this.message + (this.status === 'answered'
-    ? log.cyan(this.answer)
-    : this.rl.line);
+  if (this.status === 'answered') {
+    message += cyan(this.answer);
+  } else {
+    message += this.rl.line;
+  }
 
   this.ui.render(message, error);
 };

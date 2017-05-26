@@ -31,13 +31,16 @@ describe('enquirer-prompt-input', function() {
       message: 'What is your favorite color?',
     });
 
+    var unmute = prompt.mute();
+
     prompt.on('ask', function() {
-      prompt.write('blue\n');
+      prompt.rl.emit('line', 'blue');
     });
 
     prompt.run()
       .then(function(answer) {
         assert.deepEqual(answer, 'blue');
+        unmute();
         cb();
       })
   });
@@ -48,12 +51,15 @@ describe('enquirer-prompt-input', function() {
       message: 'What is your favorite color?',
     });
 
+    var unmute = prompt.mute();
+
     prompt.on('ask', function() {
-      prompt.write('blue\n');
+      prompt.rl.emit('line', 'blue');
     });
 
     prompt.ask(function(answer) {
       assert.deepEqual(answer, 'blue');
+      unmute();
       cb();
     });
   });
