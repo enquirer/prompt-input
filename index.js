@@ -25,7 +25,7 @@ Prompt.extend(Input);
 
 Input.prototype.render = function(state) {
   var error = typeof state === 'string' ? red('>> ') + state : '';
-  var message = this.message + ' ';
+  var message = this.renderMessage();
 
   if (this.status === 'answered') {
     message += cyan(this.answer);
