@@ -30,7 +30,7 @@ Input.prototype.render = function(state) {
   if (this.status === 'answered') {
     message += cyan(this.answer);
   } else {
-    message += this.rl.line;
+    message += this.renderHelp() + this.rl.line;
   }
 
   this.ui.render(message, error);
