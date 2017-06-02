@@ -43,6 +43,7 @@ describe('enquirer-prompt-input', function() {
         unmute();
         cb();
       })
+      .catch(cb);
   });
 
   it('should return an answers object on ask', function(cb) {
