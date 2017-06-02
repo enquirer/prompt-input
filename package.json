@@ -26,6 +26,7 @@
   "dependencies": {
     "ansi-cyan": "^0.1.1",
     "ansi-red": "^0.1.1",
+    "debug": "^2.6.8",
     "prompt-base": "^3.0.2"
   },
   "devDependencies": {

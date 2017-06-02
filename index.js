@@ -1,5 +1,6 @@
 'use strict';
 
+var debug = require('debug')('prompt-text');
 var Prompt = require('prompt-base');
 var cyan = require('ansi-cyan');
 var red = require('ansi-red');
@@ -10,6 +11,7 @@ var red = require('ansi-red');
  */
 
 function Input(/*question, answers, rl*/) {
+  debug('initializing from <%s>', __filename);
   Prompt.apply(this, arguments);
 }
 
