@@ -2,7 +2,6 @@
 
 var debug = require('debug')('prompt-text');
 var Prompt = require('prompt-base');
-var cyan = require('ansi-cyan');
 var red = require('ansi-red');
 
 /**
@@ -26,11 +25,11 @@ Prompt.extend(Input);
  */
 
 Input.prototype.render = function(state) {
-  var error = typeof state === 'string' ? red('>> ') + state : '';
   var message = this.renderMessage(this);
+  var error = this.renderError({state: state});
 
   if (this.status === 'answered') {
-    message += cyan(this.answer);
+    message += this.renderAnswer();
   } else {
     message += this.renderHelp(this) + this.rl.line;
   }
