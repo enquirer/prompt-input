@@ -2,7 +2,6 @@
 
 var debug = require('debug')('prompt-text');
 var Prompt = require('prompt-base');
-var red = require('ansi-red');
 
 /**
  * Create a new "Input" prompt with the given `question`, and optional `answers`
