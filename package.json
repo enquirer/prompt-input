@@ -25,10 +25,10 @@
   },
   "dependencies": {
     "debug": "^2.6.8",
-    "prompt-base": "^3.0.2"
+    "prompt-base": "^4.0.2"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.12",
+    "gulp-format-md": "^1.0.0",
     "mocha": "^3.4.2"
   },
   "keywords": [

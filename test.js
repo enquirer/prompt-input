@@ -17,10 +17,6 @@ describe('enquirer-prompt-input', function() {
 
   it('should throw an error when invalid args are passed', function() {
     assert.throws(function() {
-      Prompt({});
-    });
-
-    assert.throws(function() {
       Prompt(null);
     });
   });
