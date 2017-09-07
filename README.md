@@ -1,55 +1,24 @@
-# prompt-text [![NPM version](https://img.shields.io/npm/v/prompt-text.svg?style=flat)](https://www.npmjs.com/package/prompt-text) [![NPM monthly downloads](https://img.shields.io/npm/dm/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text) [![NPM total downloads](https://img.shields.io/npm/dt/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-text.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-text)
+# prompt-text [![NPM version](https://img.shields.io/npm/v/prompt-text.svg?style=flat)](https://www.npmjs.com/package/prompt-text) [![NPM monthly downloads](https://img.shields.io/npm/dm/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text)  [![NPM total downloads](https://img.shields.io/npm/dt/prompt-text.svg?style=flat)](https://npmjs.org/package/prompt-text) [![Linux Build Status](https://img.shields.io/travis/enquirer/prompt-text.svg?style=flat&label=Travis)](https://travis-ci.org/enquirer/prompt-text) 
 
-> Basic text input prompt. This can be used standalone, but it's also included in [enquirer](http://enquirer.io) by default.
+> Basic text input prompt. This can be used standalone, but it's also included in [enquirer] by default.
 
 ![prompt-text example](https://raw.githubusercontent.com/enquirer/prompt-text/master/example.gif)
 
-## Install
+**DEPRECATED**
 
-Install with [npm](https://www.npmjs.com/):
-
-```sh
-$ npm install --save prompt-text
-```
-
-## Usage
-
-```js
-var Text = require('prompt-text');
-var text = new Text({
-  name: 'first',
-  message: 'What is your name?'
-});
-
-// async
-text.ask(function(answers) {
-  console.log(answers);
-});
-
-// promise
-text.run()
-  .then(function(answers) {
-    console.log(answers);
-  });
-```
-
-## Enquirer usage
-
-There is no need to register this with [enquirer](http://enquirer.io), as this is the only prompt type included in enquirer by default.
+This module has been deprecated. Use [prompt-input][] instead.
 
 ## About
-
 ### Related projects
-
-* [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. | [homepage](http://enquirer.io "Intuitive, plugin-based prompt system for node.js.")
-* [prompt-base](https://www.npmjs.com/package/prompt-base): Base prompt module used for creating custom prompts. | [homepage](https://github.com/enquirer/prompt-base "Base prompt module used for creating custom prompts.")
-* [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer](http://enquirer.io). | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
-* [prompt-confirm](https://www.npmjs.com/package/prompt-confirm): Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer](http://enquirer.io). | [homepage](https://github.com/enquirer/prompt-confirm "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].")
-* [prompt-list](https://www.npmjs.com/package/prompt-list): List-style prompt. Can be used as a standalone prompt, or with a prompt system like… [more](https://github.com/enquirer/prompt-list) | [homepage](https://github.com/enquirer/prompt-list "List-style prompt. Can be used as a standalone prompt, or with a prompt system like [enquirer].")
-* [prompt-sort](https://www.npmjs.com/package/prompt-sort): Prompt that allows the user to re-order items in a list of choices. | [homepage](https://github.com/enquirer/prompt-sort "Prompt that allows the user to re-order items in a list of choices.")
+- [enquirer](https://www.npmjs.com/package/enquirer): Intuitive, plugin-based prompt system for node.js. | [homepage](http://enquirer.io "Intuitive, plugin-based prompt system for node.js.")
+- [prompt-base](https://www.npmjs.com/package/prompt-base): Base prompt module used for creating custom prompts. | [homepage](https://github.com/enquirer/prompt-base "Base prompt module used for creating custom prompts.")
+- [prompt-checkbox](https://www.npmjs.com/package/prompt-checkbox): Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer]. | [homepage](https://github.com/enquirer/prompt-checkbox "Multiple-choice/checkbox prompt. Can be used standalone or with a prompt system like [Enquirer].")
+- [prompt-confirm](https://www.npmjs.com/package/prompt-confirm): Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer]. | [homepage](https://github.com/enquirer/prompt-confirm "Confirm (yes/no) prompt. Can be used standalone or with a prompt system like [Enquirer].")
+- [prompt-input](https://www.npmjs.com/package/prompt-input): Basic text input prompt. This can be used standalone, but it's also included in [enquirer… [more](https://github.com/enquirer/prompt-input) | [homepage](https://github.com/enquirer/prompt-input "Basic text input prompt. This can be used standalone, but it's also included in [enquirer] by default.")
+- [prompt-list](https://www.npmjs.com/package/prompt-list): List-style prompt. Can be used as a standalone prompt, or with a prompt system like… [more](https://github.com/enquirer/prompt-list) | [homepage](https://github.com/enquirer/prompt-list "List-style prompt. Can be used as a standalone prompt, or with a prompt system like [enquirer].")
+- [prompt-sort](https://www.npmjs.com/package/prompt-sort): Prompt that allows the user to re-order items in a list of choices. | [homepage](https://github.com/enquirer/prompt-sort "Prompt that allows the user to re-order items in a list of choices.")
 
 ### Contributing
-
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
 ### Running tests
@@ -61,17 +30,19 @@ $ npm install && npm test
 ```
 
 ### Author
-
 **Jon Schlinkert**
 
-* [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
++ [github/jonschlinkert](https://github.com/jonschlinkert)
++ [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
 
 ### License
-
 Copyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).
 Released under the [MIT License](LICENSE).
 
 ***
 
-_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on July 08, 2017._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on September 07, 2017._
+
+[enquirer]: http://enquirer.io
+[prompt-input]: https://github.com/enquirer/prompt-input
+

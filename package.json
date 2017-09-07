@@ -1,7 +1,7 @@
 {
   "name": "prompt-text",
   "description": "Basic text input prompt. This can be used standalone, but it's also included in [enquirer] by default.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/enquirer/prompt-text",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -78,12 +78,17 @@
         "prompt-base",
         "prompt-checkbox",
         "prompt-confirm",
+        "prompt-input",
         "prompt-list",
         "prompt-sort"
       ]
     },
     "lint": {
       "reflinks": true
-    }
+    },
+    "reflinks": [
+      "enquirer",
+      "prompt-input"
+    ]
   }
 }
