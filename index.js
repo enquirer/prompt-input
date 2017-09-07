@@ -1,6 +1,6 @@
 'use strict';
 
-var debug = require('debug')('prompt-text');
+var debug = require('debug')('prompt-input');
 var Prompt = require('prompt-base');
 
 /**
